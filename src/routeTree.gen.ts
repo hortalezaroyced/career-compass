@@ -9,38 +9,338 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppTrackerRouteImport } from './routes/app.tracker'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
+import { Route as AppReviewRouteImport } from './routes/app.review'
+import { Route as AppResumeRouteImport } from './routes/app.resume'
+import { Route as AppPortfolioRouteImport } from './routes/app.portfolio'
+import { Route as AppLinkedinRouteImport } from './routes/app.linkedin'
+import { Route as AppInterviewRouteImport } from './routes/app.interview'
+import { Route as AppGithubRouteImport } from './routes/app.github'
+import { Route as AppDashboardRouteImport } from './routes/app.dashboard'
+import { Route as AppBillingRouteImport } from './routes/app.billing'
+import { Route as AppAtsRouteImport } from './routes/app.ats'
+import { Route as AppResumeBuilderRouteImport } from './routes/app.resume.builder'
+import { Route as AppInterviewSessionRouteImport } from './routes/app.interview.session'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppTrackerRoute = AppTrackerRouteImport.update({
+  id: '/tracker',
+  path: '/tracker',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReviewRoute = AppReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppResumeRoute = AppResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPortfolioRoute = AppPortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLinkedinRoute = AppLinkedinRouteImport.update({
+  id: '/linkedin',
+  path: '/linkedin',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInterviewRoute = AppInterviewRouteImport.update({
+  id: '/interview',
+  path: '/interview',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppGithubRoute = AppGithubRouteImport.update({
+  id: '/github',
+  path: '/github',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBillingRoute = AppBillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAtsRoute = AppAtsRouteImport.update({
+  id: '/ats',
+  path: '/ats',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppResumeBuilderRoute = AppResumeBuilderRouteImport.update({
+  id: '/builder',
+  path: '/builder',
+  getParentRoute: () => AppResumeRoute,
+} as any)
+const AppInterviewSessionRoute = AppInterviewSessionRouteImport.update({
+  id: '/session',
+  path: '/session',
+  getParentRoute: () => AppInterviewRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/signup': typeof SignupRoute
+  '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
+  '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
+  '/app/resume': typeof AppResumeRouteWithChildren
+  '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/tracker': typeof AppTrackerRoute
+  '/app/interview/session': typeof AppInterviewSessionRoute
+  '/app/resume/builder': typeof AppResumeBuilderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/signup': typeof SignupRoute
+  '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
+  '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
+  '/app/resume': typeof AppResumeRouteWithChildren
+  '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/tracker': typeof AppTrackerRoute
+  '/app/interview/session': typeof AppInterviewSessionRoute
+  '/app/resume/builder': typeof AppResumeBuilderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/signup': typeof SignupRoute
+  '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
+  '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
+  '/app/resume': typeof AppResumeRouteWithChildren
+  '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/tracker': typeof AppTrackerRoute
+  '/app/interview/session': typeof AppInterviewSessionRoute
+  '/app/resume/builder': typeof AppResumeBuilderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/forgot-password'
+    | '/login'
+    | '/onboarding'
+    | '/pricing'
+    | '/reset-password'
+    | '/signup'
+    | '/app/ats'
+    | '/app/billing'
+    | '/app/dashboard'
+    | '/app/github'
+    | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
+    | '/app/resume'
+    | '/app/review'
+    | '/app/settings'
+    | '/app/tracker'
+    | '/app/interview/session'
+    | '/app/resume/builder'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/app'
+    | '/forgot-password'
+    | '/login'
+    | '/onboarding'
+    | '/pricing'
+    | '/reset-password'
+    | '/signup'
+    | '/app/ats'
+    | '/app/billing'
+    | '/app/dashboard'
+    | '/app/github'
+    | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
+    | '/app/resume'
+    | '/app/review'
+    | '/app/settings'
+    | '/app/tracker'
+    | '/app/interview/session'
+    | '/app/resume/builder'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/forgot-password'
+    | '/login'
+    | '/onboarding'
+    | '/pricing'
+    | '/reset-password'
+    | '/signup'
+    | '/app/ats'
+    | '/app/billing'
+    | '/app/dashboard'
+    | '/app/github'
+    | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
+    | '/app/resume'
+    | '/app/review'
+    | '/app/settings'
+    | '/app/tracker'
+    | '/app/interview/session'
+    | '/app/resume/builder'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  LoginRoute: typeof LoginRoute
+  OnboardingRoute: typeof OnboardingRoute
+  PricingRoute: typeof PricingRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  SignupRoute: typeof SignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +348,164 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/tracker': {
+      id: '/app/tracker'
+      path: '/tracker'
+      fullPath: '/app/tracker'
+      preLoaderRoute: typeof AppTrackerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/review': {
+      id: '/app/review'
+      path: '/review'
+      fullPath: '/app/review'
+      preLoaderRoute: typeof AppReviewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/resume': {
+      id: '/app/resume'
+      path: '/resume'
+      fullPath: '/app/resume'
+      preLoaderRoute: typeof AppResumeRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/portfolio': {
+      id: '/app/portfolio'
+      path: '/portfolio'
+      fullPath: '/app/portfolio'
+      preLoaderRoute: typeof AppPortfolioRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/linkedin': {
+      id: '/app/linkedin'
+      path: '/linkedin'
+      fullPath: '/app/linkedin'
+      preLoaderRoute: typeof AppLinkedinRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/interview': {
+      id: '/app/interview'
+      path: '/interview'
+      fullPath: '/app/interview'
+      preLoaderRoute: typeof AppInterviewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/github': {
+      id: '/app/github'
+      path: '/github'
+      fullPath: '/app/github'
+      preLoaderRoute: typeof AppGithubRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/dashboard': {
+      id: '/app/dashboard'
+      path: '/dashboard'
+      fullPath: '/app/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/billing': {
+      id: '/app/billing'
+      path: '/billing'
+      fullPath: '/app/billing'
+      preLoaderRoute: typeof AppBillingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/ats': {
+      id: '/app/ats'
+      path: '/ats'
+      fullPath: '/app/ats'
+      preLoaderRoute: typeof AppAtsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/resume/builder': {
+      id: '/app/resume/builder'
+      path: '/builder'
+      fullPath: '/app/resume/builder'
+      preLoaderRoute: typeof AppResumeBuilderRouteImport
+      parentRoute: typeof AppResumeRoute
+    }
+    '/app/interview/session': {
+      id: '/app/interview/session'
+      path: '/session'
+      fullPath: '/app/interview/session'
+      preLoaderRoute: typeof AppInterviewSessionRouteImport
+      parentRoute: typeof AppInterviewRoute
+    }
   }
 }
 
+interface AppInterviewRouteChildren {
+  AppInterviewSessionRoute: typeof AppInterviewSessionRoute
+}
+
+const AppInterviewRouteChildren: AppInterviewRouteChildren = {
+  AppInterviewSessionRoute: AppInterviewSessionRoute,
+}
+
+const AppInterviewRouteWithChildren = AppInterviewRoute._addFileChildren(
+  AppInterviewRouteChildren,
+)
+
+interface AppResumeRouteChildren {
+  AppResumeBuilderRoute: typeof AppResumeBuilderRoute
+}
+
+const AppResumeRouteChildren: AppResumeRouteChildren = {
+  AppResumeBuilderRoute: AppResumeBuilderRoute,
+}
+
+const AppResumeRouteWithChildren = AppResumeRoute._addFileChildren(
+  AppResumeRouteChildren,
+)
+
+interface AppRouteChildren {
+  AppAtsRoute: typeof AppAtsRoute
+  AppBillingRoute: typeof AppBillingRoute
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppGithubRoute: typeof AppGithubRoute
+  AppInterviewRoute: typeof AppInterviewRouteWithChildren
+  AppLinkedinRoute: typeof AppLinkedinRoute
+  AppPortfolioRoute: typeof AppPortfolioRoute
+  AppResumeRoute: typeof AppResumeRouteWithChildren
+  AppReviewRoute: typeof AppReviewRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppTrackerRoute: typeof AppTrackerRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAtsRoute: AppAtsRoute,
+  AppBillingRoute: AppBillingRoute,
+  AppDashboardRoute: AppDashboardRoute,
+  AppGithubRoute: AppGithubRoute,
+  AppInterviewRoute: AppInterviewRouteWithChildren,
+  AppLinkedinRoute: AppLinkedinRoute,
+  AppPortfolioRoute: AppPortfolioRoute,
+  AppResumeRoute: AppResumeRouteWithChildren,
+  AppReviewRoute: AppReviewRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppTrackerRoute: AppTrackerRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  LoginRoute: LoginRoute,
+  OnboardingRoute: OnboardingRoute,
+  PricingRoute: PricingRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
