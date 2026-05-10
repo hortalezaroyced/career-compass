@@ -18,10 +18,15 @@ import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppTrackerRouteImport } from './routes/app.tracker'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
 import { Route as AppReviewRouteImport } from './routes/app.review'
 import { Route as AppResumeRouteImport } from './routes/app.resume'
+import { Route as AppPortfolioRouteImport } from './routes/app.portfolio'
+import { Route as AppLinkedinRouteImport } from './routes/app.linkedin'
 import { Route as AppInterviewRouteImport } from './routes/app.interview'
+import { Route as AppGithubRouteImport } from './routes/app.github'
 import { Route as AppDashboardRouteImport } from './routes/app.dashboard'
+import { Route as AppBillingRouteImport } from './routes/app.billing'
 import { Route as AppAtsRouteImport } from './routes/app.ats'
 import { Route as AppResumeBuilderRouteImport } from './routes/app.resume.builder'
 import { Route as AppInterviewSessionRouteImport } from './routes/app.interview.session'
@@ -71,6 +76,11 @@ const AppTrackerRoute = AppTrackerRouteImport.update({
   path: '/tracker',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppReviewRoute = AppReviewRouteImport.update({
   id: '/review',
   path: '/review',
@@ -81,14 +91,34 @@ const AppResumeRoute = AppResumeRouteImport.update({
   path: '/resume',
   getParentRoute: () => AppRoute,
 } as any)
+const AppPortfolioRoute = AppPortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLinkedinRoute = AppLinkedinRouteImport.update({
+  id: '/linkedin',
+  path: '/linkedin',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppInterviewRoute = AppInterviewRouteImport.update({
   id: '/interview',
   path: '/interview',
   getParentRoute: () => AppRoute,
 } as any)
+const AppGithubRoute = AppGithubRouteImport.update({
+  id: '/github',
+  path: '/github',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBillingRoute = AppBillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
   getParentRoute: () => AppRoute,
 } as any)
 const AppAtsRoute = AppAtsRouteImport.update({
@@ -117,10 +147,15 @@ export interface FileRoutesByFullPath {
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
   '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
   '/app/resume': typeof AppResumeRouteWithChildren
   '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/tracker': typeof AppTrackerRoute
   '/app/interview/session': typeof AppInterviewSessionRoute
   '/app/resume/builder': typeof AppResumeBuilderRoute
@@ -135,10 +170,15 @@ export interface FileRoutesByTo {
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
   '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
   '/app/resume': typeof AppResumeRouteWithChildren
   '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/tracker': typeof AppTrackerRoute
   '/app/interview/session': typeof AppInterviewSessionRoute
   '/app/resume/builder': typeof AppResumeBuilderRoute
@@ -154,10 +194,15 @@ export interface FileRoutesById {
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/app/ats': typeof AppAtsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/github': typeof AppGithubRoute
   '/app/interview': typeof AppInterviewRouteWithChildren
+  '/app/linkedin': typeof AppLinkedinRoute
+  '/app/portfolio': typeof AppPortfolioRoute
   '/app/resume': typeof AppResumeRouteWithChildren
   '/app/review': typeof AppReviewRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/tracker': typeof AppTrackerRoute
   '/app/interview/session': typeof AppInterviewSessionRoute
   '/app/resume/builder': typeof AppResumeBuilderRoute
@@ -174,10 +219,15 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signup'
     | '/app/ats'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/github'
     | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
     | '/app/resume'
     | '/app/review'
+    | '/app/settings'
     | '/app/tracker'
     | '/app/interview/session'
     | '/app/resume/builder'
@@ -192,10 +242,15 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signup'
     | '/app/ats'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/github'
     | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
     | '/app/resume'
     | '/app/review'
+    | '/app/settings'
     | '/app/tracker'
     | '/app/interview/session'
     | '/app/resume/builder'
@@ -210,10 +265,15 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signup'
     | '/app/ats'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/github'
     | '/app/interview'
+    | '/app/linkedin'
+    | '/app/portfolio'
     | '/app/resume'
     | '/app/review'
+    | '/app/settings'
     | '/app/tracker'
     | '/app/interview/session'
     | '/app/resume/builder'
@@ -295,6 +355,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppTrackerRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/review': {
       id: '/app/review'
       path: '/review'
@@ -309,6 +376,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppResumeRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/portfolio': {
+      id: '/app/portfolio'
+      path: '/portfolio'
+      fullPath: '/app/portfolio'
+      preLoaderRoute: typeof AppPortfolioRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/linkedin': {
+      id: '/app/linkedin'
+      path: '/linkedin'
+      fullPath: '/app/linkedin'
+      preLoaderRoute: typeof AppLinkedinRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/interview': {
       id: '/app/interview'
       path: '/interview'
@@ -316,11 +397,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppInterviewRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/github': {
+      id: '/app/github'
+      path: '/github'
+      fullPath: '/app/github'
+      preLoaderRoute: typeof AppGithubRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/dashboard': {
       id: '/app/dashboard'
       path: '/dashboard'
       fullPath: '/app/dashboard'
       preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/billing': {
+      id: '/app/billing'
+      path: '/billing'
+      fullPath: '/app/billing'
+      preLoaderRoute: typeof AppBillingRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/ats': {
@@ -373,19 +468,29 @@ const AppResumeRouteWithChildren = AppResumeRoute._addFileChildren(
 
 interface AppRouteChildren {
   AppAtsRoute: typeof AppAtsRoute
+  AppBillingRoute: typeof AppBillingRoute
   AppDashboardRoute: typeof AppDashboardRoute
+  AppGithubRoute: typeof AppGithubRoute
   AppInterviewRoute: typeof AppInterviewRouteWithChildren
+  AppLinkedinRoute: typeof AppLinkedinRoute
+  AppPortfolioRoute: typeof AppPortfolioRoute
   AppResumeRoute: typeof AppResumeRouteWithChildren
   AppReviewRoute: typeof AppReviewRoute
+  AppSettingsRoute: typeof AppSettingsRoute
   AppTrackerRoute: typeof AppTrackerRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppAtsRoute: AppAtsRoute,
+  AppBillingRoute: AppBillingRoute,
   AppDashboardRoute: AppDashboardRoute,
+  AppGithubRoute: AppGithubRoute,
   AppInterviewRoute: AppInterviewRouteWithChildren,
+  AppLinkedinRoute: AppLinkedinRoute,
+  AppPortfolioRoute: AppPortfolioRoute,
   AppResumeRoute: AppResumeRouteWithChildren,
   AppReviewRoute: AppReviewRoute,
+  AppSettingsRoute: AppSettingsRoute,
   AppTrackerRoute: AppTrackerRoute,
 }
 
